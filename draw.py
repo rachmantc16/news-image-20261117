@@ -266,6 +266,9 @@ def main():
     draw_tracked(draw, (0, foot_y + 10),
                  "ALL THE NEWS OF TUESDAY 17 NOVEMBER 2026 · IN ONE PICTURE",
                  foot_fnt, INK, tracking=1, anchor_center=True)
+    # Bottom rule, mirroring the top rule at y=40: it frames the page.
+    # Placed 24 px above the bottom edge, clear of the footer text above it.
+    draw.line([CX0, H - 24, CX1, H - 24], fill=INK, width=2)
 
     img.save(OUT, format="PNG", optimize=True)
     print("wrote", OUT, os.path.getsize(OUT), "bytes")
